@@ -19,7 +19,9 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class Xls_Reader {
+import DriverFile.BaseClass;
+
+public class Xls_Reader extends BaseClass {
 	public String path;
 	public FileInputStream fis = null;
 	public FileOutputStream fileOut = null;
