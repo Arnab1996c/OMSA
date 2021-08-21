@@ -25,12 +25,7 @@
     <version>6.11</version>
     <scope>compile</scope>
 </dependency>
-    <dependency>
-    <groupId>io.github.bonigarcia</groupId>
-    <artifactId>webdrivermanager</artifactId>
-    <version>4.4.3</version>
-    <scope>main</scope>
-</dependency>
+    
  
 <dependency>
     <groupId>org.apache.poi</groupId>
