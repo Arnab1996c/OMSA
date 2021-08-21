@@ -27,7 +27,7 @@ public class Testng extends BaseClass {
 @BeforeMethod
 public void SetUp(){
 	
-	initialization("Edge");
+	initialization("Chrome");
 	LogInPage=new LogInPage();
 	
 
