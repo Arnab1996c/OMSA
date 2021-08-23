@@ -23,6 +23,8 @@ import java.util.Date;
 import javax.swing.Icon;
 import javax.swing.JOptionPane;
 
+//import com.testng.CustomListner;
+
 
 import org.apache.commons.io.FileUtils;
 
@@ -30,7 +32,6 @@ import org.apache.commons.io.FileUtils;
 import DriverFile.BaseClass;
 
 public class DiffMethod extends BaseClass{
-	
 	public static  void DatePicking(WebElement element1,WebElement element2,String Day_Month_Year ) throws InterruptedException{
 		
 		/*if (DateType.equals("ReturnDate")){
@@ -125,36 +126,19 @@ public class DiffMethod extends BaseClass{
 			e.printStackTrace();
 		}
 	}
-	public static String Screenshot() throws IOException{
+	public static String SrcScreenshot() throws IOException{
 		//Timestamp instant= Timestamp.from(Instant.now()); 
 		TakesScreenshot src = ((TakesScreenshot)driver);
 		//String filePath="D:/Users/XY58270/Downloads/Screenshot/"+DiffMethod.calendar()+".jpg";
-		String filePath="C://ScreenShot//"+CurrentTime()+".png";
+		String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+		String filePath="C://ScreenShot"+timeStamp+".png";
 		File Srcfile=src.getScreenshotAs(OutputType.FILE);
 		File DestFile = new File(filePath);
 		FileUtils.copyFile(Srcfile, DestFile);
 		return filePath;
-		
+	}
+	
 
-	}
-	public static String CurrentTime(){
-		//Calendar calender = new Calendar();
-		String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
-		return timeStamp;
-	}
-	public static void SrcScreenshot() throws IOException{
-		//Timestamp instant= Timestamp.from(Instant.now()); 
-		TakesScreenshot src = ((TakesScreenshot)driver);
-		String filePath;
-		filePath="C://ScreenShot//"+CurrentTime()+".png";
-		//String filePath=System.getProperty("use.dir")+"/Screenshot/"+"spiceJET.png";
-		File Srcfile=src.getScreenshotAs(OutputType.FILE);
-		File DestFile = new File(filePath);
-		FileUtils.copyFile(Srcfile, DestFile);
-		
-		
-
-	}
 	/*public static void dialogBox(){
 		
 	JOptionPane.showOptionDialog(null, message, "An Err Occured", JOptionPane.OK_CANCEL_OPTION, JOptionPane.ERROR_MESSAGE, null);

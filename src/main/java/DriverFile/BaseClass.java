@@ -6,13 +6,15 @@ package DriverFile;
 import org.openqa.selenium.edge.EdgeDriver;
 //import io.github.bonigarcia.wdm.WebDriverManager;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 	public class BaseClass {
 		public static WebDriver driver;
 		
 		public void initialization(String browser){
 			if (browser.equals("Chrome")){
-				//WebDriverManager.chromedriver().setup();
-				System.setProperty("webdriver.chrome.driver","D://Selenium//ChromeDriver//chromedriver.exe");
+				WebDriverManager.chromedriver().setup();
+				//System.setProperty("webdriver.chrome.driver","D://Selenium//ChromeDriver//chromedriver.exe");
 				ChromeOptions options = new ChromeOptions();
 				options.addArguments("window-size=1400,800");
 				options.addArguments("incognito");

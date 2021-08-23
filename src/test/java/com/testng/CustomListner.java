@@ -1,8 +1,14 @@
 package com.testng;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.ProtocolHandshake.Result;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -42,10 +48,12 @@ public  class CustomListner extends BaseClass implements ITestListener   {
 
 	public void onTestSuccess(ITestResult result) {
 		// TODO Auto-generated method stub
-		test=extent.createTest(result.getMethod().getMethodName(),"Started");
+		String TestName = result.getMethod().getMethodName();
+		test=extent.createTest(TestName,"Started");
 		test.log(Status.PASS, "PASSED"+result.getMethod().getMethodName());
+		
 		try {
-			test.pass("PASSED", MediaEntityBuilder.createScreenCaptureFromPath(DiffMethod.Screenshot()).build());
+			test.pass("PASSED", MediaEntityBuilder.createScreenCaptureFromPath(Screenshot(TestName)).build());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -59,10 +67,11 @@ public  class CustomListner extends BaseClass implements ITestListener   {
 		System.out.println("Failed Test");
 		test=extent.createTest(result.getMethod().getMethodName());
 		test.log(Status.FAIL, "FAILED"+result.getMethod().getMethodName());
+		String TestName = result.getMethod().getMethodName();
 		
 		try {
 			//test.log(Status.FAIL, (Markup) test.addScreencastFromPath(DiffMethod.Screenshot()));
-			test.fail("FAILED", MediaEntityBuilder.createScreenCaptureFromPath(DiffMethod.Screenshot()).build());
+			test.fail("FAILED", MediaEntityBuilder.createScreenCaptureFromPath(Screenshot(TestName)).build());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -88,8 +97,9 @@ public  class CustomListner extends BaseClass implements ITestListener   {
 		//test.log(Status.SKIP, "Skipped"+result.getMethod().getMethodName());.
 		test=extent.createTest(result.getMethod().getMethodName(),"done");
 		test.log(Status.SKIP, "Skipped"+result.getMethod().getMethodName());
+		String TestName = result.getMethod().getMethodName();
 		try {
-			test.skip("skipped", MediaEntityBuilder.createScreenCaptureFromPath(DiffMethod.Screenshot()).build());
+			test.skip("skipped", MediaEntityBuilder.createScreenCaptureFromPath(Screenshot(TestName)).build());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -140,6 +150,19 @@ public  class CustomListner extends BaseClass implements ITestListener   {
 	        return extent;
 	    }
 	}
+	public static String Screenshot(String MethodName) throws IOException{
+		//Timestamp instant= Timestamp.from(Instant.now()); 
+		TakesScreenshot src = ((TakesScreenshot)driver);
+		//MethodName = result.getMethod().getMethodName();
+		//String filePath="D:/Users/XY58270/Downloads/Screenshot/"+DiffMethod.calendar()+".jpg";
+		String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+		String filePath="C://ScreenShot//"+MethodName+"//"+timeStamp+".png";
+		File Srcfile=src.getScreenshotAs(OutputType.FILE);
+		File DestFile = new File(filePath);
+		FileUtils.copyFile(Srcfile, DestFile);
+		return filePath;
+	}
+	
 
 }
 

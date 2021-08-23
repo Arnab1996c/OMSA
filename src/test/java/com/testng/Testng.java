@@ -1,24 +1,11 @@
 package com.testng;
 
-import java.io.IOException;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.testng.CustomListner.ExtentManager;
-
 import DriverFile.BaseClass;
-import Method.DiffMethod;
 import ObjectRepository.LogInPage;
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
 @Listeners(CustomListner.class)
 public class Testng extends BaseClass {
     LogInPage LogInPage;
