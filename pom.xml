@@ -46,7 +46,7 @@
     <groupId>io.github.bonigarcia</groupId>
     <artifactId>webdrivermanager</artifactId>
     <version>4.4.3</version>
-    <scope>main</scope>
+    <scope>test</scope>
 </dependency>   
 <dependency>
     <groupId>commons-io</groupId>
@@ -72,12 +72,6 @@
           <source>1.8</source>
           <target>1.8</target>
         </configuration>
-        </plugin>
-        <plugin>
-     	<groupId>org.apache.maven.plugins</groupId>
-  <artifactId>maven-surefire-plugin</artifactId>
-  <version>3.0.0-M5</version>
-  <type>maven-plugin</type>
       </plugin>
     </plugins>
   

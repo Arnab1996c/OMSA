@@ -5,23 +5,15 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.TakesScreenshot;
-
-import java.io.Console;
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
-import javax.swing.Icon;
-import javax.swing.JOptionPane;
+
 
 //import com.testng.CustomListner;
 
