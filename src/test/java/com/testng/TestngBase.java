@@ -1,5 +1,7 @@
 package com.testng;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -7,7 +9,7 @@ import org.testng.annotations.Test;
 import DriverFile.BaseClass;
 import ObjectRepository.LogInPage;
 @Listeners(CustomListner.class)
-public class Testng extends BaseClass {
+public class TestngBase extends BaseClass {
     LogInPage LogInPage;
     
     
@@ -42,17 +44,18 @@ public void Test1() throws InterruptedException{
 	
 	
 }
-/*@Test(priority=1,enabled=false)
+@Test(priority=2)
 public void test2() throws InterruptedException{
 	Thread.sleep(60000);
 
 	WebElement element=driver.findElement(By.xpath("//label[contains(text(),'Last name')]//following::i[1]"));
 	//DiffMethod.MouseHover(element);
 	String text=element.getText();
-	System.out.println(text);*/
+	System.out.println(text);
 	
 	
 	
+}
 }
 /*@AfterMethod
 public void close(){

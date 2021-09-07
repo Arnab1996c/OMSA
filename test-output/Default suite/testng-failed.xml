@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.testng.Testng">
+      <class name="com.testng.TestngBase">
         <methods>
-          <include name="SetUp"/>
           <include name="Test1"/>
+          <include name="test2"/>
+          <include name="SetUp"/>
         </methods>
-      </class> <!-- com.testng.Testng -->
+      </class> <!-- com.testng.TestngBase -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -21,6 +21,7 @@ import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import DriverFile.BaseClass;
+import Method.DiffMethod;
 
 public  class CustomListner extends BaseClass implements ITestListener   {
 	 //static  extent;
@@ -146,13 +147,13 @@ public  class CustomListner extends BaseClass implements ITestListener   {
 	        return extent;
 	    }
 	}
-	public static String Screenshot(String MethodName) throws IOException{
+	public static String Screenshot(String TestName) throws IOException{
 		//Timestamp instant= Timestamp.from(Instant.now()); 
 		TakesScreenshot src = ((TakesScreenshot)driver);
-		//MethodName = result.getMethod().getMethodName();
+		//TestName = result.getMethod().getMethodName();
 		//String filePath="D:/Users/XY58270/Downloads/Screenshot/"+DiffMethod.calendar()+".jpg";
 		String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
-		String filePath="C://ScreenShot//"+MethodName+"//"+timeStamp+".png";
+		String filePath="C://ScreenShot//"+TestName+"//"+timeStamp+".png";
 		File Srcfile=src.getScreenshotAs(OutputType.FILE);
 		File DestFile = new File(filePath);
 		FileUtils.copyFile(Srcfile, DestFile);

@@ -54,12 +54,7 @@ public class DiffMethod extends BaseClass{
 			System.out.println(Year1);
 		}
 		driver.findElement(By.xpath("//a[text()='"+Day+"']")).click();
-		try {
-			SrcScreenshot();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 	}
 	
 	public static void Set(WebElement element, String Data1) {
@@ -67,56 +62,31 @@ public class DiffMethod extends BaseClass{
 		element.sendKeys(Keys.CONTROL + "a");
 		element.sendKeys(Keys.DELETE);
 		element.sendKeys(Data1);
-		try {
-			SrcScreenshot();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 		
 	}
 	public static void Select(WebElement element, String Data1){
 		Select SELECT = new Select(element);
 		SELECT.selectByVisibleText(Data1);
-		try {
-			SrcScreenshot();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 		
 	}
 	public static void Click(WebElement element){
 	
 		element.click();
-		try {
-			SrcScreenshot();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 		
 	}
 	public static void Check(WebElement element){
 		JavascriptExecutor js = ((JavascriptExecutor)driver);
 		js.executeScript("arguments[0].style.border='3px solid red'", element);
-		try {
-			SrcScreenshot();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 		
 	}
 	public static void MouseHover( WebElement element){
 		Actions action = new Actions(driver);
 		action.moveToElement(element).build().perform();	
-		try {
-			SrcScreenshot();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 	}
 	public static String SrcScreenshot() throws IOException{
 		//Timestamp instant= Timestamp.from(Instant.now()); 
