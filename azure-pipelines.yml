@@ -8,8 +8,7 @@ trigger:
 - master
 
 pool:
-name: UFT
-
+name: Agent
 steps:
 - task: Maven@3
   inputs:
