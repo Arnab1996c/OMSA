@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  demands:Agent
+  UFT:'Agent'
 
 steps:
 - task: Maven@3
