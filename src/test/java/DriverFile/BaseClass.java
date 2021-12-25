@@ -18,8 +18,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 				WebDriverManager.chromedriver().setup();
 
 				//System.setProperty("webdriver.chrome.driver","D://Selenium//ChromeDriver//chromedriver.exe");
-				//ChromeOptions options = new ChromeOptions();
-				//options.addArguments("window-size=1400,800");
+				ChromeOptions options = new ChromeOptions();
+				options.addArguments("window-size=1400,800");
 				//options.addArguments("headless");
 				/*DesiredCapabilities capabilities = new DesiredCapabilities();
 				capabilities.setCapability(ChromeOptions.CAPABILITY, options);

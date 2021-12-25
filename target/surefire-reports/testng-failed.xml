@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="none" name="Failed suite [Sanity]" guice-stage="DEVELOPMENT" verbose="0">
+  <test parallel="none" name="OMSA Test(failed)">
+    <classes>
+      <class name="com.testng.TestngBase">
+        <methods>
+          <include name="close"/>
+          <include name="Test2"/>
+          <include name="SetUp"/>
+        </methods>
+      </class> <!-- com.testng.TestngBase -->
+    </classes>
+  </test> <!-- OMSA Test(failed) -->
+</suite> <!-- Failed suite [Sanity] -->
