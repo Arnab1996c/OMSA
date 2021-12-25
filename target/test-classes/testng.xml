@@ -3,7 +3,12 @@
 <suite name="Sanity">
   <test name="OMSA Test">
     <classes>
-      <class name="com.testng.TestngBase"/>
+      <class name="com.testng.TestngBase">
+      <methods>
+          <include name="Test1"/>
+          <include name="Test2"/>
+        </methods>
+        </class>
     </classes>
   </test>
 </suite>

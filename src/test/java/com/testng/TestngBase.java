@@ -1,67 +1,56 @@
 package com.testng;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import DriverFile.BaseClass;
-import ObjectRepository.LogInPage;
+import DriverFile.EnvVariable;
+import Method.DiffMethod;
+import ObjectRepository.EbayItemSearchPage;
 @Listeners(CustomListner.class)
 public class TestngBase extends BaseClass {
-    LogInPage LogInPage;
-    
     
 @BeforeMethod
 public void SetUp(){
 	
-	initialization("Chrome");
-	LogInPage=new LogInPage();
-	
-
+	initialization(EnvVariable.Browser_Type1);
 }
-@Test(priority=1)
+
+@Test()
 public void Test1() throws InterruptedException{
 	System.out.println("mousehover");
-	//LogInPage.checkSearchButton();
-	
+	Thread.sleep(2000);
+	DiffMethod.Set(EbayItemSearchPage.SearchBox(),"SearchBox", 2);
 	Thread.sleep(5000);
-	LogInPage.clickOnRoundTrip();
+	DiffMethod.Click(EbayItemSearchPage.CategoryType());
 	Thread.sleep(5000);
-	LogInPage.clickOnDepartureCity();
+	DiffMethod.Select(EbayItemSearchPage.CategoryType(),"CategoryType", 2);
 	Thread.sleep(3000);
-	LogInPage.SelectOneDepartureCity("Ajmer (KQH");
-	//LogInPage.SelectOneDepartureCity("Ajmer (KQ)");
-	LogInPage.clickOnArrivalCity();
 	
-	/*LogInPage.SelectOneArrivalCity("Durgapur (RDP)");
-	LogInPage.DepartureCalenderDate("16_December_2021");
+}
+@Test()
+public void Test2() throws InterruptedException{
+	System.out.println("mousehove");
+	Thread.sleep(2000);
+	DiffMethod.Set(EbayItemSearchPage.SearchBox(),"SearchBox", 2);
 	Thread.sleep(5000);
-	LogInPage.ArrivalCalenderDate("22_December_2021");
-	LogInPage.MouseHoverOnLogInButton();
-	Thread.sleep(5000);*/
-	
+	DiffMethod.Click(EbayItemSearchPage.CategoryType());
+	Thread.sleep(5000);
+	DiffMethod.Select(EbayItemSearchPage.CategoryType(),"CategoryType", 5);
+	Thread.sleep(3000);
 	
 }
-@Test(priority=2)
-public void test2() throws InterruptedException{
-	Thread.sleep(60000);
 
-	WebElement element=driver.findElement(By.xpath("//label[contains(text(),'Last name')]//following::i[1]"));
-	//DiffMethod.MouseHover(element);
-	String text=element.getText();
-	System.out.println(text);
-	
-	
-	
-}
-}
-/*@AfterMethod
+
+@AfterMethod
 public void close(){
+	
 	driver.quit();
-}*/
+}
  
-
+}
 
 
