@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-  <test thread-count="5" name="Test">
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+<suite name="Sanity">
+  <test name="OMSA Test">
+    <classes>
+      <class name="com.testng.TestngBase">
+      <methods>
+          <include name="Test1"/>
+          <include name="Test2"/>
+        </methods>
+        </class>
+    </classes>
+  </test>
+</suite>

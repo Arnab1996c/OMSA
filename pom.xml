@@ -68,7 +68,7 @@
         <reuseForks>true</reuseForks>
         <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
           <suiteXmlFiles>
-            <suiteXmlFile>src/test/java/testng.xml</suiteXmlFile>
+            <suiteXmlFile>test-output/Sanitytestng.xml</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
       </plugin>
